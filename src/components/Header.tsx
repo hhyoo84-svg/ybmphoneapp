@@ -31,7 +31,6 @@ export const Header: React.FC<HeaderProps> = ({
             id="btn-nav-back"
             onClick={onOpenBookCover}
             className="w-8 h-8 rounded-lg flex items-center justify-center text-stone-600 hover:bg-stone-200/60 hover:text-[#5D4BE2] active:scale-95 transition-all cursor-pointer flex-shrink-0"
-            title="교재 표지 및 레슨 리스트"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
