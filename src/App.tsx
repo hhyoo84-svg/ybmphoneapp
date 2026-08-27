@@ -187,7 +187,7 @@ export default function App() {
                         }`}
                       >
                         <ArrowLeftRight className="w-3.5 h-3.5 stroke-[2.5]" />
-                        <span>{isPartTranslationOpen ? '영문' : '번'}</span>
+                        <span>{isPartTranslationOpen ? '영문' : '해석'}</span>
                       </button>
                     </div>
                   )}
