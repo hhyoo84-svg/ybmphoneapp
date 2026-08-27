@@ -11,6 +11,19 @@ import { QuickJumpModal } from './components/QuickJumpModal';
 import { BookCoverLessonListView } from './components/BookCoverLessonListView';
 import { speechManager } from './utils/speech';
 import { Smartphone, Tablet, Laptop, ArrowLeftRight, BookOpen, Layers } from 'lucide-react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* 기존에 작성하신 페이지 컴포넌트 */}
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
 
 export default function App() {
   // Navigation View Mode: 'lesson' (Part 1~13 Viewer) or 'course_cover' (Textbook Cover & Lesson List)
