@@ -60,9 +60,6 @@ export const QuickJumpModal: React.FC<QuickJumpModalProps> = ({
                     }`}>
                       {part.partNumber}
                     </span>
-                    <span className="text-[10px] font-black text-[#5D4BE2] bg-[#EEEDFC] px-1.5 py-0.5 rounded">
-                      {part.typeLabel || `타입 ${String(part.typeNumber).padStart(2, '0')}`}
-                    </span>
                   </div>
                   <div>
                     <span className="font-bold text-sm block">{part.title}</span>
