@@ -37,10 +37,6 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           <div className="min-w-0 flex flex-col justify-center">
-            {/* Course Title (PC Only) */}
-            <span className="hidden sm:block text-[11px] font-bold text-stone-500 truncate tracking-tight">
-              {lesson.courseName || '일상회화 Daily Life 초급'}
-            </span>
             
             {/* Lesson Title Row */}
             <div className="flex items-center gap-2 truncate">
