@@ -1,0 +1,6 @@
+{
+  "name": "전화영어 교재 - Main Dialogue UI/UX",
+  "description": "전화영어 교재앱의 말풍선 대화 UI/UX 개선 시안 및 인터랙티브 학습 뷰어",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
