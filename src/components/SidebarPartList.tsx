@@ -62,15 +62,6 @@ export const SidebarPartList: React.FC<SidebarPartListProps> = ({
                   {p.title}
                 </span>
               </div>
-
-              {/* Part Type Number Badge */}
-              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-md flex-shrink-0 tracking-tight ${
-                isActive 
-                  ? 'bg-[#5D4BE2] text-white' 
-                  : 'bg-[#F5F2EC] text-stone-500 group-hover:text-stone-700'
-              }`}>
-                {p.typeLabel || `타입 ${String(p.typeNumber).padStart(2, '0')}`}
-              </span>
             </button>
           );
         })}

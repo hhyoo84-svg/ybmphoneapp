@@ -10,7 +10,7 @@ import { OtherPartView } from './components/OtherPartView';
 import { QuickJumpModal } from './components/QuickJumpModal';
 import { BookCoverLessonListView } from './components/BookCoverLessonListView';
 import { speechManager } from './utils/speech';
-import { Smartphone, Tablet, Laptop, ArrowLeftRight, BookOpen, Layers } from 'lucide-react';
+import { Smartphone, Tablet, Laptop, ArrowLeftRight, BookOpen, Layers, Globe } from 'lucide-react';
 
 
 export default function App() {
@@ -173,20 +173,20 @@ export default function App() {
                     {currentPart.description}
                   </p>
 
-                  {/* Part Hero Action Toggle Button (⇄ 해석 / ⇄ 영문 or ⇄ Guide / ⇄ Hide) */}
+                  {/* Part Hero Action Toggle Button (Globe Icon) */}
                   {currentPart.headerActionType === 'translation' && (
                     <div className="mt-3.5 flex items-center">
                       <button
                         id="btn-hero-toggle-trans"
                         type="button"
                         onClick={() => setIsPartTranslationOpen(!isPartTranslationOpen)}
-                        className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer shadow-xs active:scale-95 ${
+                        className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer shadow-xs active:scale-95 ${
                           isPartTranslationOpen
                             ? 'bg-white text-[#5D4BE2] shadow-md ring-2 ring-white/60'
                             : 'bg-white/90 hover:bg-white text-[#5D4BE2] hover:shadow-md'
                         }`}
                       >
-                        <ArrowLeftRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                        <Globe className="w-3.5 h-3.5 stroke-[2.2]" />
                         <span>{isPartTranslationOpen ? '영문' : '해석'}</span>
                       </button>
                     </div>
@@ -198,7 +198,7 @@ export default function App() {
                         id="btn-hero-toggle-guide"
                         type="button"
                         onClick={() => setIsPartGuideOpen(!isPartGuideOpen)}
-                        className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer shadow-xs active:scale-95 ${
+                        className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer shadow-xs active:scale-95 ${
                           isPartGuideOpen
                             ? 'bg-white text-[#5D4BE2] shadow-md ring-2 ring-white/60'
                             : 'bg-white/90 hover:bg-white text-[#5D4BE2] hover:shadow-md'
@@ -242,14 +242,26 @@ export default function App() {
             </div>
           </div>
 
-          {/* Floating Bottom Navigation Dock */}
-          <BottomPlayerBar
-            activePartId={activePartId}
-            totalParts={lesson.parts.length}
-            onPrevPart={handlePrevPart}
-            onNextPart={handleNextPart}
-            onTogglePartListModal={() => setIsQuickJumpOpen(true)}
-          />
+          {/* Floating Bottom Navigation Dock (Visible only in Mobile mode or on small mobile screens) */}
+          {(pcDeviceMode === 'mobile' || pcDeviceMode === 'tablet') ? (
+            <BottomPlayerBar
+              activePartId={activePartId}
+              totalParts={lesson.parts.length}
+              onPrevPart={handlePrevPart}
+              onNextPart={handleNextPart}
+              onTogglePartListModal={() => setIsQuickJumpOpen(true)}
+            />
+          ) : (
+            <div className="md:hidden">
+              <BottomPlayerBar
+                activePartId={activePartId}
+                totalParts={lesson.parts.length}
+                onPrevPart={handlePrevPart}
+                onNextPart={handleNextPart}
+                onTogglePartListModal={() => setIsQuickJumpOpen(true)}
+              />
+            </div>
+          )}
 
           {/* Quick Jump / Part Curriculum Drawer Modal */}
           <QuickJumpModal

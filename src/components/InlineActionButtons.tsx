@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Volume2, Languages } from 'lucide-react';
+import { Volume2, Globe } from 'lucide-react';
 
 interface InlineActionButtonsProps {
   idPrefix?: string;
@@ -28,7 +28,7 @@ export const InlineActionButtons: React.FC<InlineActionButtonsProps> = ({
 
   return (
     <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 select-none">
-      {/* Translation (Languages) Icon Button */}
+      {/* Translation (Globe) Icon Button */}
       {hasTranslation && onToggleTrans && (
         <motion.button
           id={`btn-trans-${idPrefix}`}
@@ -43,7 +43,7 @@ export const InlineActionButtons: React.FC<InlineActionButtonsProps> = ({
           className="p-1 flex items-center justify-center cursor-pointer transition-colors duration-150 relative bg-transparent border-0 outline-none"
           title={isTransOpen ? '한국어 해석 닫기' : '한국어 번역 보기'}
         >
-          <Languages className="w-[18px] h-[18px] sm:w-5 sm:h-5 stroke-[2.2]" />
+          <Globe className="w-[18px] h-[18px] sm:w-5 sm:h-5 stroke-[2.2]" />
 
           {/* Active subtle dot indicator */}
           {isTransOpen && (

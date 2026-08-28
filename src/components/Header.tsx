@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Lesson Title Row */}
             <div className="flex items-center gap-2 truncate">
               <span className="font-black text-sm sm:text-base text-[#5D4BE2] tracking-tight flex-shrink-0">
-                {activePart ? (activePart.typeLabel || `타입 ${String(activePart.typeNumber).padStart(2, '0')}`) : lesson.lessonNumber}
+                {activePart ? activePart.partNumber : lesson.lessonNumber}
               </span>
               <span className="hidden sm:inline font-extrabold text-sm sm:text-base text-slate-900 tracking-tight truncate">
                 {activePart ? activePart.title : lesson.title}
